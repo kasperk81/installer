@@ -72,14 +72,14 @@
         Condition=" '$(PublishBinariesAndBadge)' == 'true' and '$(OS)' == 'Windows_NT' and '$(Architecture)' == 'x64' and '$(PgoInstrument)' != 'true'" />
     <SdkAssetsToPublish Include="$(ArtifactsShippingPackagesDir)sdk-productVersion.txt"
         Condition=" '$(PublishBinariesAndBadge)' == 'true' and '$(OS)' == 'Windows_NT' and '$(Architecture)' == 'x64' and '$(PgoInstrument)' != 'true'" />
-    <SdkAssetsToPublish Include="$(ArtifactsShippingPackagesDir)productCommit-*.txt" Condition=" '$(PublishBinariesAndBadge)' == 'true' " />
+    <SdkAssetsToPublish Include="$(ArtifactsShippingPackagesDir)productCommit-*.json" Condition=" '$(PublishBinariesAndBadge)' == 'true' " />
     <SdkNonShippingAssetsToPublish Include="$(ArtifactsNonShippingPackagesDir)*.swr" />
     <SdkNonShippingAssetsToPublish Include="$(ArtifactsNonShippingPackagesDir)*.msi" />
     <SdkNonShippingAssetsToPublish Condition="'$(PublishBinariesAndBadge)' != 'false'" Include="$(ArtifactsNonShippingPackagesDir)*.tar.gz" />
     <SdkNonShippingAssetsToPublish Condition="'$(PublishBinariesAndBadge)' != 'false'" Include="$(ArtifactsNonShippingPackagesDir)*.zip" />
     <SdkNonShippingAssetsToPublish Include="$(ArtifactsNonShippingPackagesDir)*.pkg" />
     <CheckSumsToPublish Include="$(ArtifactsShippingPackagesDir)*.sha" />
-    <CheckSumsToPublish Remove="$(ArtifactsShippingPackagesDir)productCommit-*.txt.sha" Condition=" '$(PublishBinariesAndBadge)' == 'false'" />
+    <CheckSumsToPublish Remove="$(ArtifactsShippingPackagesDir)productCommit-*.json.sha" Condition=" '$(PublishBinariesAndBadge)' == 'false'" />
     <CheckSumsToPublish Remove="$(ArtifactsShippingPackagesDir)productVersion.txt.sha" Condition=" '$(OS)' != 'Windows_NT' or '$(Architecture)' != 'x64'" />
     <CheckSumsToPublish Remove="$(ArtifactsShippingPackagesDir)sdk-productVersion.txt.sha" Condition=" '$(OS)' != 'Windows_NT' or '$(Architecture)' != 'x64'" />
     <CheckSumsToPublish Remove="$(ArtifactsShippingPackagesDir)*.zip.sha" Condition=" '$(PublishBinariesAndBadge)' == 'false' "/>
